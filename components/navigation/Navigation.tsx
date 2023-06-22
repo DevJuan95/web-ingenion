@@ -43,13 +43,10 @@ export default function Navigation({className}:Props) {
                     <li className="navigation__item">
                         <a href="#" className='navigation__link'>Contacto</a>
                     </li>
-                    <li className="navigation__item">
-                        <input type="checkbox" className='navigation__checkbox' id="navi-toggle"/>
-                        <label htmlFor="navi-toggle" className='navigation__button'>
-                            <span className='navigation__icon'></span>
-                        </label>
-                    </li>
                 </ul>
+                <div className="navigation__button" onClick={() => {alert("Hola mundo")}}>
+                    <span className='navigation__icon'></span>
+                </div>
             </nav>
         </>
     )
