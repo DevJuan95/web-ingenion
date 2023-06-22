@@ -1,3 +1,4 @@
+import ButtonOutline from "../ui/button/ButtonOutline";
 
 export default function Header() {
     return (
@@ -7,8 +8,8 @@ export default function Header() {
                     <span className="main-banner__text--primary">Ingenion es tecnología e inovación.</span>
                     <span className="main-banner__text--secondary">Construyendo soluciones seguras</span>
                 </h1>
-                <div className="main-banner__link">
-                    <a href="">Descubra nuestros servicios</a>
+                <div className="main-banner__link-box">
+                    <ButtonOutline link={"#"} text={"Descubra nuestros servicios"} />
                 </div>
             </div>
         </header>

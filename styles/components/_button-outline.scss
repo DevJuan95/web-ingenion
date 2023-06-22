@@ -1,0 +1,32 @@
+.btn-outline {
+    &:visited,
+    &:link {
+        cursor: pointer;
+        max-width: 1rem;
+        text-decoration: none;
+        color: var(--white-color);
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover,
+    &:active { 
+        letter-spacing: .3rem;
+        color: var(--primary-color);
+    }
+
+    &::after{
+        border: 1px solid rgba(#fff, 0);
+        content: "";
+        display: block;
+        position: relative;
+        transition: all .5s ease-in-out;
+        width: 0;
+    }
+
+    &:hover::after{
+        border-color: var(--primary-color);
+        transition: width .5s ease-in-out;
+        width: 100%;
+    }
+
+}
