@@ -9,13 +9,16 @@ interface Props {
 
 export default function Navigation({className}:Props) {
     
-    const [onPageScroll, setOnPageScrolle] = useState(false);
+    const [onPageScroll, setOnPageScroll] = useState(false);
+    const [showFullPageNav, setShowFullPageNav] = useState(false);
+
     const changeNavbarColor = () => {
         if (window.scrollY >= 80) {
-            setOnPageScrolle(true);
+            setOnPageScroll(true);
         }
         else {
-            setOnPageScrolle(false);
+            setOnPageScroll(false);
+            setShowFullPageNav(false);
         }
     };
 
@@ -26,11 +29,11 @@ export default function Navigation({className}:Props) {
 
     return (
         <>
-            <nav className={onPageScroll ? `navigation navigation--hidden-principal ${className}`: `navigation ${className}`}>
-                <a href="https://ingeion.com.co" className="navigation__logo-link">
+            <nav className={`navigation ${className}`}>
+                <a href="https://ingeion.com.co" className={onPageScroll? 'navigation__logo-box':  'navigation__logo-box is-visible'}>
                     <Image src={logo} className="navigation__logo" alt="Logo Ingenion" />
                 </a>
-                <ul className="navigation__list">
+                <ul className={onPageScroll? 'navigation__list':  'navigation__list is-visible'}>
                     <li className="navigation__item">
                         <a href="#" className="navigation__link" aria-current="page">Inicio</a>
                     </li>
@@ -44,9 +47,10 @@ export default function Navigation({className}:Props) {
                         <a href="#" className='navigation__link'>Contacto</a>
                     </li>
                 </ul>
-                <div className="navigation__button" onClick={() => {alert("Hola mundo")}}>
+                <div className={onPageScroll ? "navigation__button is-visible": "navigation__button"} onClick={() => { console.log(showFullPageNav);setShowFullPageNav(!showFullPageNav)}}>
                     <span className='navigation__icon'></span>
                 </div>
+                <div className={showFullPageNav ? "full-page-nav__background active": "full-page-nav__background"} >&nbsp;</div>
             </nav>
         </>
     )
