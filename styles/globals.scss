@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --primary-color-light: #45b9be;
+  --primary-color-dark: #0c6d74;
+  --primary-color: #45b9be;
+  --black-color: #000;
+  --black-color-1: #0c0c0c;
+  --white--color: #fff;
+  --grey-color-1: #f7f7f7;
+  --grey-color-2: #eee;
+  --grey-color-3: #777;
+  --section-padding-lg: 10rem;
+}
+html {
+    font-size: 62.5%;
+    color: var(--black-color-1);
+    font-family: var(--font-poppins);
+    letter-spacing: .3rem;
+}
+
+body {
+    font-size: 1.6rem;
+    min-height: 100%;
+    position: relative;
+    height: 150vh;
+}

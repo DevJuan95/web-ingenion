@@ -1,0 +1,52 @@
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 var(--section-padding-lg);
+    padding-top: 1rem;
+
+    &__logo {
+        height: 8rem;
+        width: 100%;
+        transition: all 0.4s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        padding: 0 1rem;
+        align-self: stretch;
+        align-items: center;
+    }
+
+    &__item {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        transition: all 0.2s;
+        padding: 1rem;
+        &:not(:last-child){
+            padding: 1rem 2rem;
+        }
+        &:hover {
+            top: -.8rem;
+        }
+    }
+
+    &__link {
+        &:active,
+        &:link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--white--color);
+            font-weight: bold;
+        }
+    }
+}
